@@ -1,0 +1,171 @@
+.body, h1, h2, h3 {
+  font-family: 'Helvetica Neue';
+  font-weight: 350;
+}
+
+.inline-highlight {
+  background-color: #ffff88;  
+}
+
+.remark-inline-code{
+  /* background: #F5F5F5; /* lighter */
+  background: #e7e8e2; /* darker */
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.caption {
+  text-align: center;
+  font-size: .8rem;
+}
+
+h1 {
+  -webkit-margin-before: 0.1em;
+  -webkit-margin-after: 0.1em !important;  
+  padding-bottom: 0 !important;
+}
+
+h2 {
+  -webkit-margin-before: 0.1em;
+  -webkit-margin-after: 0.1em !important;  
+}
+
+h3 {
+  margin-bottom: 0;
+  padding: bottom: 0;
+}
+
+.logo img {
+    /*transform: rotate(15deg);*/
+    /*margin-left: 15%;*/
+    margin-top: 2em;
+    border-radius: 50%;
+}
+
+/*style title slide*/
+.title-slide .title h1 {
+  padding-top: 10%;
+  font-size: 3.2em;
+}
+
+.title-slide .author {
+  padding-top: 5%;
+}
+
+.title-slide .col-5 {
+  padding-right: 0;
+}
+.title-slide .fab,
+.title-slide .ai {
+  color: black;
+  margin-right: 5px;
+}
+.title-slide .author h3,
+.title-slide .affiliation h3 {
+  font-size: 1.5em;
+  padding-bottom: 0;
+}
+
+
+/* general style */
+li {
+  margin-bottom: 15px;
+}
+
+.large {
+  font-size: 130%;
+}
+
+h1.huge{
+  font-size: 300%;
+}
+
+.larger-body p, .larger-body li {
+  font-size: 1.15em;
+}
+
+.very-large-body p, .very-large-body li {
+  font-size: 1.4em;
+}
+
+.on-top-right {
+  position: absolute;
+  left: 60%;
+  top: 40%;
+}
+
+/* syntax-slide */
+.syntax-slide p,
+.syntax-slide li,
+.small-font p,
+.small-font li{
+  margin-bottom: 0;
+}
+.syntax-slide h3 {
+  margin-top: 0;
+}
+
+/* practice slide */
+.practice-slide li,
+.practice-slide p,
+.practice-slide ul {
+  margin-bottom: 0;
+}
+
+.beginner {
+  background-color: #61BE37;
+  border-radius: 25px;
+}
+
+.intermediate {
+  background-color: #E0BE37;
+  border-radius: 25px;
+}
+.advanced {
+  background-color: pink; /*#FF3934;*/
+  border-radius: 25px;
+}
+
+.black a {
+  color: black;
+}
+
+.grey {
+  color: grey;
+}
+
+.color {
+  color: #800020;
+}
+
+.import-annotation{
+  position: absolute;
+  left: 3%;
+  top: 10%;
+}
+
+.tidy-annotation {
+  position: absolute;
+  left: 6%;
+  top: 52%;
+}
+
+.explore-annotation {
+  position: absolute;
+  left: 48%;
+  top: 75%;
+}
+
+.communicate-annotation {
+  position: absolute;
+  left: 78%;
+  top: 28%;
+}
+
+kbd {
+  color: #373a3c;
+  background-color: #f8f9fa;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #dee2e6;
+}

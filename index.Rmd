@@ -1,0 +1,20 @@
+---
+title: "R Markdown Workshop"
+date: "12-13 March 2019"
+author: Ulrik Lyngs
+output: 
+  html_document:
+    theme: yeti
+    includes:
+       in_header: GA_Script.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This repo contains slides and teaching materials for an R Markdown workshop taught as part of the [Oxford|Berlin Summer School on Open Research](https://s-quest.bihealth.org/BeOx/index.html), 21 September 2021.
+
+Slides are available here:
+
+- [Hello, R Markdown!](slides/oxfordBerlinRMarkdown.html)
