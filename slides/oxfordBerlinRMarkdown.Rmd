@@ -58,11 +58,11 @@ knitr::include_graphics("figures/rmd-band.jpg")
 ```
 ]
 
-Slides for this workshop:<br> [ulyngs.github.io/UPDATE-THIS](https://ulyngs.github.io/rmarkdown-workshop-2019/)
+Slides:<br> [ulyngs.github.io/oxberlin-2021-rmd-workshop/](https://ulyngs.github.io/oxberlin-2021-rmd-workshop/)
 
-Materials for this workshop:<br> [github.com/ulyngs/UPDATE-THIS](https://github.com/ulyngs/rmarkdown-workshop-2019)
+Materials:<br> [github.com/ulyngs/oxberlin-2021-rmd-workshop](https://github.com/ulyngs/oxberlin-2021-rmd-workshop)
 
-Band art by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
+R Markdown band artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
 ]
 
 ]
