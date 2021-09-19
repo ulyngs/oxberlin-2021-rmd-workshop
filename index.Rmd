@@ -1,6 +1,6 @@
 ---
 title: "R Markdown Workshop"
-date: "12-13 March 2019"
+date: "21 September 2021"
 author: Ulrik Lyngs
 output: 
   html_document:
