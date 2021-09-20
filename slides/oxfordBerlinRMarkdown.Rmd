@@ -1161,8 +1161,7 @@ knitr::include_graphics("figures/captain.jpeg")
 
 ---
 class: larger-body
-## Figure and table references
-- **GOTCHA**: Figures and tables must have captions if you wish to cross-reference them.
+## Figure and table reference
 
 
 .pull-left[
@@ -1185,6 +1184,11 @@ knitr::kable(cars[1:5,],
 .pull-right[
 - Refer to this table with `\@ref(tab:cars)`
 ]
+
+--
+<br>
+<br>
+- **GOTCHA**: Figures and tables must have captions if you wish to cross-reference them.
 
 ---
 class: larger-body
