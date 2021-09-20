@@ -169,3 +169,7 @@ kbd {
   border-radius: 5px;
   border-color: #dee2e6;
 }
+
+.black-background {
+  background-color: black;
+}
