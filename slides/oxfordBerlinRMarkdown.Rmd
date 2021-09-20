@@ -68,11 +68,15 @@ R Markdown band artwork by [@allison_horst](https://github.com/allisonhorst/stat
 ]
 
 ???
-- I'm Ulrik, and I'll speaking about how to use R Markdown to make reproducible research easy and fun!
+- I'm Ulrik, and this workshop is about how to use R Markdown to make reproducible research easy and fun!
+- I assume there will have been some mention of this in the workshop on Monday on reproducible workflows in R, but here we'll go a bit more into depth
 - before I say more, I'll start by showing a clip from my favourite scary movie
 
 ---
-<iframe width="1300" height="600" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+class: center, top, black-background
+
+<iframe width="1600" height="660" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="fullscreen;" allowfullscreen="1"></iframe>
+
 ---
 class: center, middle, inverse
 
@@ -83,7 +87,7 @@ class: center, middle, inverse
 - who am I?
 - postdoc, [Human Centred Computing Group](https://www.cs.ox.ac.uk/research/HCC/)
 - Cognitive psychologist-turned-computer scientist
-- fan of open science, think R Markdown's got a things stuff going for it; wrote my entire phd thesis in it and use it for everything from basic data analysis to interactive dashboards and even a songbook for my live karaoke band
+- fan of open science, think R Markdown's got a things stuff going for it
 
 ---
 class: larger-body
@@ -104,6 +108,9 @@ class: larger-body
 - [How to create custom chunk options](https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/)
 - [Advanced customisation with pandoc filters](https://ulyngs.github.io/blog/posts/2019-02-19-how-to-use-pandoc-filters-for-advanced-customisation-of-your-r-markdown-document/)
 ]
+
+???
+wrote my entire phd thesis in it and use it for everything from basic data analysis to interactive dashboards and even the songbook for my live karaoke band
 
 ---
 class: inverse, center, middle
@@ -426,14 +433,21 @@ class: center, middle, inverse
 knitr::include_graphics("figures/rmarkdown_universe.jpg")
 ```
 
+.pull-left[
 ```yaml
 ---
-output: 
-  html_document: 
-    toc: true
-  pdf_document: default
+output: html_document
 ---
 ```
+]
+
+.pull-right[
+```yaml
+---
+output: pdf_document
+---
+```
+]
 
 ???
 let's do a quick demo
@@ -600,7 +614,6 @@ Everybody should already have on their laptops...
 *Tweak the content*
 - add your name and today's date to the YAML header
 - add a paragraph with a header, **bold**, and *italics*
-- knit to output of your choice
 - how do you create linebreaks and new paragraphs?
 ]
   
@@ -609,7 +622,7 @@ In a new R Markdown file, add a paragraph that contains
 - a hyperlink
 - a blockquote
 - a comment
-- some math
+- a footnote
 
 Skim through the references available from within RStudio:
 - Help > Cheatsheets > R Markdown Cheat Sheet
@@ -713,7 +726,6 @@ cars %>%
     geom_point()
 ```
 ]
-
 
 
 ---
@@ -873,11 +885,12 @@ class: larger-body
 .row[
 
 .col-4.beginner[
-In a new R Markdown file, use code chunks to
-1. include an image with `knitr::include_graphics`
-2. include a plot (e.g. `plot(pressure)`)
-3. include a table (using `kable`)
-4. report a calculation with inline code 
+Open the file **using_code.Rmd**, then
+
+1. include the image **figures/1920_car.jpg** with `knitr::include_graphics`
+2. plot speed vs distance in the `cars` dataset (use `plot(cars)`)
+3. include a table of the cars dataset
+4. report the mean of the speed column in the cars dataset (`mean(cars$speed)`) with inline code
 ]
   
 .col-4.intermediate[
@@ -958,6 +971,61 @@ Blah blah [@Shea2014; @Lottridge2012].
   
 Blah blah (Shea et al. 2014; Lottridge et al. 2012).
 ]
+
+---
+class: larger-body
+# Citations
+<ol start = 3>
+<li>In your text, citations go inside brackets and separated by semicolons.
+</ol>
+
+
+.pull-left[
+### This...
+Blah blah [@Shea2014; @Lottridge2012].
+
+Shea et al. says blah [-@Shea2014].
+
+]
+
+.pull-right[
+### turns into this...
+  
+Blah blah (Shea et al. 2014; Lottridge et al. 2012).
+
+Shea et al. says blah (2014).
+
+]
+
+---
+class: larger-body
+# Citations
+<ol start = 3>
+<li>In your text, citations go inside brackets and separated by semicolons.
+</ol>
+
+
+.pull-left[
+### This...
+Blah blah [@Shea2014; @Lottridge2012].
+
+Shea et al. says blah [-@Shea2014].
+
+@Shea2014 says blah.
+
+]
+
+.pull-right[
+### turns into this...
+  
+Blah blah (Shea et al. 2014; Lottridge et al. 2012).
+
+Shea et al. says blah (2014).
+
+Shea et al. (2014) says blah.
+
+]
+
 ---
 class: larger-body
 # Citations
@@ -988,8 +1056,6 @@ Shea et al. (2014) says blah.
 
 Blah blah (see Shea et al. 2014, 33–35; also Wu 2016, ch. 1).
 ]
-
-
 
 ---
 class: larger-body
@@ -1026,6 +1092,8 @@ The citations you insert are automatically added to your **.bib** file.
 knitr::include_graphics("figures/visual-citation.png")
 ```
 ]
+
+--
 
 .pull-right[
 ```{r, echo=FALSE, out.width="60%"}
@@ -1155,20 +1223,19 @@ class: larger-body
 .row[
 
 .col-4.beginner[
-1. Use the Visual Editor to insert a reference into an R Markdown document - knit to see the result
+1. Use the Visual Editor to insert a citation into an R Markdown document - knit to see the result
 2. Make cross-references to a figure and a table
 ]
   
 .col-4.intermediate[
-1. Try adding a custom label to a header and use this label to reference the section
-1. Open **examples/citation_test.Rmd** and change the citation style with `csl: citation_styles/apa.csl`. What happens when you knit?
-2. Try downloading a **.csl** file with a citation style from [zotero.org/styles](https://www.zotero.org/styles). Try using this to style the references when you knit your R Markdown document (in the YAML header, use `csl: the-file-you-downloaded.csl`)
+1. Add a custom label to a header and use this label to reference the section
+2. Try downloading a **.csl** file with a citation style from [zotero.org/styles](https://www.zotero.org/styles). Use this to style the references in your R Markdown document (in your YAML header, use `csl: the-file-you-downloaded.csl`)
 ]
 
 .col-4.advanced[
-1. Go to RStudio -> Preferences -> R Markdown -> Visual. Why might it be important to use sentence-level line wrapping?
 2. How do you stop pandoc from automatically inserting cited references by the end of the document?
 3. How would you handle a situation where special characters made `fig.cap` mess up? (.black[[hint](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references)])
+1. Go to RStudio -> Preferences -> R Markdown -> Visual. Why might it be important to use sentence-level line wrapping?
 ]
 ]
 
@@ -1251,6 +1318,26 @@ include_graphics("figures/template_error.png")
 ]
 
 ---
+# 3 steps in adapting a LaTeX template
+
+1. Make the template compile correctly with just the template content (watch out for `$` signs)
+
+--
+
+2. Pull in the content you want from the YAML header and body of your R Markdown source file, by plugging the relevant variable into the LaTeX template surrounded by dollar signs
+
+--
+
+3. Enable code inclusion, by adding this at the top of the **.tex** template (otherwise you'll get an error when you try to show code blocks in your compiled file)
+
+```latex
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+```
+
+
+---
 class: center, middle, inverse
 
 ![](figures/rmarkdownflow.png)
@@ -1283,7 +1370,7 @@ this should be formatted as $x^2$
 
 --
 .pull-right[
-- We change to this:<br>
+- Change to this:<br>
 <br>
 
 ```latex
@@ -1294,6 +1381,12 @@ this should be formatted as $$x^2$$
 ]
 
 ---
+class: center, middle, inverse
+
+# Demo
+
+---
+
 class: larger-body
 
 ## plos_latex_template.tex
@@ -1441,21 +1534,6 @@ include_graphics("figures/template_plos.png")
 ```
 
 ]
-
----
-# 3 steps in adapting a LaTeX template
-
-1. Make the template compile correctly with just the template content (watch out for `$` signs)
-
-2. Pull in the content you want from the YAML header and body of your R Markdown source file, by plugging the relevant variable into the LaTeX template surrounded by dollar signs
-
-3. Enable code inclusion, by adding this at the top of the **.tex** template (otherwise you'll get an error when you try to show code blocks in your compiled file)
-
-```latex
-$if(highlighting-macros)$
-$highlighting-macros$
-$endif$
-```
 
 ---
 class: center, middle
