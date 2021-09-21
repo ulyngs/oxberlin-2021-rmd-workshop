@@ -1281,12 +1281,11 @@ Table: Stopping cars
 ---
 class: larger-body
 ### Section references
-- Assing a label to a header by adding `{#label}` after it, e.g. `# My awesome header {#test-label}`.
 
+- Assing a label to a header by adding `{#label}` after it, e.g. `# My awesome header {#test-label}`.
 
 --
 - Then reference `# My awesome header` with `\@ref(test-label)`
-
 
 --
 - .Rmd: `See section \@ref(test-label)` -&gt; output: 'See section 1'
@@ -1327,7 +1326,7 @@ class: larger-body
 .col-4.advanced[
 2. How do you stop pandoc from automatically inserting cited references by the end of the document?
 3. How would you handle a situation where special characters made `fig.cap` mess up? (.black[[hint](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references)])
-1. Go to RStudio -&gt; Preferences -&gt; R Markdown -&gt; Visual. Why might it be important to use sentence-level line wrapping?
+1. Go to RStudio -&gt; Preferences -&gt; R Markdown -&gt; Visual. Why is sentence-level line wrapping useful?
 ]
 ]
 
@@ -1337,6 +1336,54 @@ class: larger-body
 class: center, middle, inverse
 
 # Bonus: Using templates
+
+---
+class: larger-body
+
+## Simple customisation via YAML header
+
+- Many simple output options are easily set in the YAML header
+
+--
+
+### Table of contents
+
+.pull-left[
+```yaml
+---
+title: "Output customisation"
+output: 
+  bookdown::html_document2:
+*   toc: true
+---
+```
+]
+
+--
+.pull-right[
+&lt;img src="figures/html_toc.png" width="659" /&gt;
+]
+
+
+---
+### Table of contents
+
+.pull-left[
+```yaml
+---
+title: "Output customisation"
+output: 
+  bookdown::html_document2:
+    toc: true
+*   toc_float: true
+---
+```
+]
+
+--
+.pull-right[
+&lt;img src="figures/html_toc_float.png" width="972" /&gt;
+]
 
 ---
 class: larger-body
@@ -1410,17 +1457,23 @@ output:
 
 --
 
-2. Pull in the content you want from the YAML header and body of your R Markdown source file, by plugging the relevant variable into the LaTeX template surrounded by dollar signs
+2. Pull in the content you want from your R Markdown source file, by plugging the relevant variables into the LaTeX template surrounded by dollar signs
 
 --
 
-3. Enable code inclusion, by adding this at the top of the **.tex** template (otherwise you'll get an error when you try to show code blocks in your compiled file)
+3. Enable code inclusion, by adding this at the top of the **.tex** template (otherwise you'll get an error when you try to show code from code chunks in your compiled file)
 
 ```latex
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 ```
+
+---
+class: center, middle, inverse
+
+# Demo
+
 
 
 ---
@@ -1465,11 +1518,6 @@ this should be formatted as $$x^2$$
 (or $$\mathrm{x}^2$$ if the romanized font is desired).
 ```
 ]
-
----
-class: center, middle, inverse
-
-# Demo
 
 ---
 
