@@ -1026,7 +1026,7 @@ class: larger-body
 .pull-right[
 ### turns into this...
 
-Shea et al. says blah (2014).
+Shea et al. (2014) says blah.
 
 ]
 
@@ -1045,14 +1045,12 @@ class: larger-body
 
 Blah blah [@Shea2014; @Lottridge2012].
 
-Shea et al. says blah [-@Shea2014].
-
 ]
 
 .pull-right[
 ### turns into this...
   
-Shea et al. says blah (2014).
+Shea et al. (2014) says blah.
 
 Blah blah (Shea et al. 2014; Lottridge et al. 2012).
 
@@ -1119,6 +1117,23 @@ Blah blah (see Shea et al. 2014, 33–35; also Wu 2016, ch. 1).
 
 ---
 class: larger-body
+
+# Citations
+The best way to handle citations is with RStudio's new [Visual Editor](https://rstudio.github.io/visual-markdown-editing/).
+
+--
+
+&lt;h1 class="center-this"&gt;Demo!&lt;/h1&gt;
+
+&lt;style&gt;
+.center-this{
+  text-align: center;
+  margin-top: 2em;
+}
+&lt;/style&gt;
+
+
+---
 # Citations
 The best way to handle citations is with RStudio's new [Visual Editor](https://rstudio.github.io/visual-markdown-editing/).
 
@@ -1147,19 +1162,9 @@ The citations you insert are automatically added to your **.bib** file.
 &lt;img src="figures/visual-citation.png" width="80%" /&gt;
 ]
 
---
-
 .pull-right[
 &lt;img src="figures/visual-citation-search.png" width="60%" /&gt;
 ]
-
-
----
-
-class: center, middle, inverse
-
-# Demo
-
 
 ---
 class: larger-body
@@ -1167,25 +1172,54 @@ class: larger-body
 - For most academic writing you will want to make cross references to **figures**, **tables**, or **sections** within your document.
 
 --
-- The `bookdown` package added cross-referencing to R Markdown
+- The `bookdown` package adds cross-referencing to R Markdown
 
 --
-- To enable cross-referencing, your output should use e.g. `bookdown::html_document2`, `bookdown::pdf_document2`, or `bookdown::word_document2`, in the YAML header (see [bookdown.org](https://bookdown.org/yihui/bookdown/output-formats.html))
+- To enable cross-referencing, your output should therefore use e.g. `bookdown::html_document2`, `bookdown::pdf_document2`, or `bookdown::word_document2`, in the YAML header (see [bookdown.org](https://bookdown.org/yihui/bookdown/output-formats.html))
 
 
 --
+.pull-left[
+This won't work:
 ```yaml
 ---
 title: "Cross-referencing test"
-output: bookdown::html_document2
+output: html_document
 ---
 ```
+]
+
+.pull-right[
+This will work:
+```yaml
+---
+title: "Cross-referencing test"
+*output: bookdown::html_document2
+---
+```
+]
+
+
+
+---
+
+class: larger-body
+# Cross-referencing
+
+The basic cross-reference syntax: 
+
+- For plots and images: `\@ref(fig:chunk-label)`
 
 --
-- The basic cross-reference syntax is `\@ref(label)` (simply `@ref(label)` in the Visual Editor)
+- For tables: `\@ref(tab:chunk-label)`
 
 --
-- For figures: `\@ref(fig:label)`, tables: `\@ref(tab:label)`
+- For sections: `\@ref(section-label)`
+
+--
+&lt;br&gt;
+&lt;br&gt;
+- **GOTCHA**: Figures and tables must have captions if you wish to cross-reference them.
 
 ---
 class: larger-body
@@ -1243,11 +1277,6 @@ Table: Stopping cars
 .pull-right[
 - Refer to this table with `\@ref(tab:cars)`
 ]
-
---
-&lt;br&gt;
-&lt;br&gt;
-- **GOTCHA**: Figures and tables must have captions if you wish to cross-reference them.
 
 ---
 class: larger-body
