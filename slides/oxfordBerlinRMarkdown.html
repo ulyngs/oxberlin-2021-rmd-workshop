@@ -831,7 +831,7 @@ class: larger-body
 # Inline code
 
 --
-Inside your text you can include code with the syntax &lt;span&gt;&amp;#96;&lt;/span&gt;r code here&amp;#96;.
+Inside your text you can include executable code with the syntax &lt;span&gt;&amp;#96;&lt;/span&gt;r code here&amp;#96;.
 
 
 --
@@ -913,7 +913,7 @@ py$my_number
 ```
 
 --
-Inline you can then refer to this python variable with &lt;span&gt;&amp;#96;&lt;/span&gt;r py$my_number&amp;#96; - `my_number` is 12.
+Inline you can then refer to this python variable with &lt;span&gt;&amp;#96;&lt;/span&gt;r py$my_number&amp;#96;.
 
 
 ---
@@ -943,8 +943,8 @@ class: larger-body
 Open the file **using_code.Rmd**, then
 
 1. include the image **figures/1920_car.jpg** with `knitr::include_graphics`
-2. plot speed vs distance in the `cars` dataset (use `plot(cars)`)
-3. include a table of the cars dataset
+2. plot speed vs distance in the `cars` dataset (`plot(cars)`)
+3. include a table of the cars dataset (`knitr::kable(cars)`)
 4. report the mean of the speed column in the cars dataset (`mean(cars$speed)`) with inline code
 ]
   
@@ -1012,59 +1012,12 @@ output: html_document
 class: larger-body
 # Citations
 &lt;ol start = 3&gt;
-&lt;li&gt;In your text, citations go inside brackets and separated by semicolons.
+&lt;li&gt;In your text, use &lt;em&gt;@citation-identifier&lt;/em&gt; to cite something. Multiple citations should be separated by semi-colons.
 &lt;/ol&gt;
 
 --
 .pull-left[
 ### This...
-Blah blah [@Shea2014; @Lottridge2012].
-]
-
-.pull-right[
-### turns into this...
-  
-Blah blah (Shea et al. 2014; Lottridge et al. 2012).
-]
-
----
-class: larger-body
-# Citations
-&lt;ol start = 3&gt;
-&lt;li&gt;In your text, citations go inside brackets and separated by semicolons.
-&lt;/ol&gt;
-
-
-.pull-left[
-### This...
-Blah blah [@Shea2014; @Lottridge2012].
-
-Shea et al. says blah [-@Shea2014].
-
-]
-
-.pull-right[
-### turns into this...
-  
-Blah blah (Shea et al. 2014; Lottridge et al. 2012).
-
-Shea et al. says blah (2014).
-
-]
-
----
-class: larger-body
-# Citations
-&lt;ol start = 3&gt;
-&lt;li&gt;In your text, citations go inside brackets and separated by semicolons.
-&lt;/ol&gt;
-
-
-.pull-left[
-### This...
-Blah blah [@Shea2014; @Lottridge2012].
-
-Shea et al. says blah [-@Shea2014].
 
 @Shea2014 says blah.
 
@@ -1072,42 +1025,94 @@ Shea et al. says blah [-@Shea2014].
 
 .pull-right[
 ### turns into this...
-  
-Blah blah (Shea et al. 2014; Lottridge et al. 2012).
 
 Shea et al. says blah (2014).
 
+]
+
+---
+class: larger-body
+# Citations
+&lt;ol start = 3&gt;
+&lt;li&gt;In your text, use &lt;em&gt;@citation-identifier&lt;/em&gt; to cite something. Multiple citations should be separated by semi-colons.
+&lt;/ol&gt;
+
+
+.pull-left[
+### This...
+
+@Shea2014 says blah.
+
+Blah blah [@Shea2014; @Lottridge2012].
+
+Shea et al. says blah [-@Shea2014].
+
+]
+
+.pull-right[
+### turns into this...
+  
+Shea et al. says blah (2014).
+
+Blah blah (Shea et al. 2014; Lottridge et al. 2012).
+
+]
+
+---
+class: larger-body
+# Citations
+&lt;ol start = 3&gt;
+&lt;li&gt;In your text, use &lt;em&gt;@citation-identifier&lt;/em&gt; to cite something. Multiple citations should be separated by semi-colons.
+&lt;/ol&gt;
+
+
+.pull-left[
+### This...
+@Shea2014 says blah.
+
+Blah blah [@Shea2014; @Lottridge2012].
+
+Shea et al. says blah [-@Shea2014].
+
+]
+
+.pull-right[
+### turns into this...
+  
 Shea et al. (2014) says blah.
 
+Blah blah (Shea et al. 2014; Lottridge et al. 2012).
+
+Shea et al. says blah (2014).
+
 ]
 
 ---
 class: larger-body
 # Citations
 &lt;ol start = 3&gt;
-&lt;li&gt;In your text, citations go inside brackets and separated by semicolons.
+&lt;li&gt;In your text, use &lt;em&gt;@citation-identifier&lt;/em&gt; to cite something. Multiple citations should be separated by semi-colons.
 &lt;/ol&gt;
 
 
 .pull-left[
 ### This...
+@Shea2014 says blah.
+
 Blah blah [@Shea2014; @Lottridge2012].
 
 Shea et al. says blah [-@Shea2014].
-
-@Shea2014 says blah.
 
 Blah blah [see @Shea2014, pp. 33-35; also @Wu2016, ch. 1].
 ]
 
 .pull-right[
 ### turns into this...
+Shea et al. (2014) says blah.
   
 Blah blah (Shea et al. 2014; Lottridge et al. 2012).
 
 Shea et al. says blah (2014).
-
-Shea et al. (2014) says blah.
 
 Blah blah (see Shea et al. 2014, 33–35; also Wu 2016, ch. 1).
 ]
