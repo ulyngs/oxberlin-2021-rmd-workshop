@@ -26,10 +26,16 @@ knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/")
 library(tidyverse)
 library(magick)
 library(reticulate)
-library(knitr)
-use_python("/Users/ulyngs/opt/anaconda3/bin/python")
+
+devtools::install_github("gadenbuie/xaringanExtra")
 xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 ```
+
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "scribble"))
+```
+
 
 .row[
 .col-7[
@@ -639,14 +645,14 @@ Skim through the references available from within RStudio:
 ]
 
 ---
-class: center, middle, inverse
-
-![](figures/googling.jpg)
-
----
 class: center, middle
 
 # Wonderful markdown-in-10-mins tutorial: <br> https://www.markdowntutorial.com
+
+---
+class: center, middle, inverse
+
+![](figures/googling.jpg)
 
 ---
 class: center, middle
@@ -1287,7 +1293,7 @@ class: larger-body
 
 .pull-left[
 ```{r}
-include_graphics("figures/plos_latex.png")
+knitr::include_graphics("figures/plos_latex.png")
 ```
 
 ]
@@ -1296,7 +1302,7 @@ include_graphics("figures/plos_latex.png")
 --
 .pull-right[
 ```{r}
-include_graphics("figures/template_compiled.png")
+knitr::include_graphics("figures/template_compiled.png")
 ```
 ]
 
@@ -1317,7 +1323,7 @@ output:
 --
 .pull-right[
 ```{r}
-include_graphics("figures/template_error.png")
+knitr::include_graphics("figures/template_error.png")
 ```
 ]
 
@@ -1409,7 +1415,7 @@ output:
 ```
 
 ```{r, out.width="88%", fig.align='center'}
-include_graphics("figures/template_escapes.png")
+knitr::include_graphics("figures/template_escapes.png")
 ```
 
 
@@ -1420,7 +1426,7 @@ include_graphics("figures/template_escapes.png")
 .pull-right[
 
 ```{r, out.width = "95%"}
-include_graphics("figures/template_compiled.png")
+knitr::include_graphics("figures/template_compiled.png")
 ```
 ]
 
@@ -1534,7 +1540,7 @@ It was released as a downloadable track for Rock Band in addition to appearing a
 
 .pull-right[
 ```{r, out.width="88%"}
-include_graphics("figures/template_plos.png")
+knitr::include_graphics("figures/template_plos.png")
 ```
 
 ]
