@@ -1451,7 +1451,7 @@ output:
 ]
 
 ---
-# 3 steps in adapting a LaTeX template
+# 4 steps in adapting a LaTeX template
 
 1. Make the template compile correctly with just the template content (watch out for `$` signs)
 
@@ -1462,12 +1462,21 @@ output:
 --
 
 3. Enable code inclusion, by adding this at the top of the **.tex** template (otherwise you'll get an error when you try to show code from code chunks in your compiled file)
+    ```latex
+    $if(highlighting-macros)$
+    $highlighting-macros$
+    $endif$
+    ```
+--
+4. Make your R Markdown citation package compatible with the **.tex** template
+  - By default, `pandoc`'s [CSL](https://citationstyles.org) citations are used. To enable this in your LaTeX template, copy the relevant part (from "$if(csl-refs)$" to "$endif$") from the [pandoc latex template](https://github.com/jgm/pandoc/blob/master/data/templates/default.latex)
+  - To use `natbib` or `biblatex`, indicate this in the YAML header of your R Markdown file, and make sure the LaTeX template includes the right packages (see e.g. guidance here for [natbib](https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib) and [biblatex](https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex)).
 
-```latex
-$if(highlighting-macros)$
-$highlighting-macros$
-$endif$
-```
+    ```yaml
+    output: 
+      bookdown::pdf_document2:
+        citation_package: natbib
+    ```
 
 ---
 class: center, middle, inverse
@@ -1670,7 +1679,7 @@ class: center, middle
 
 &lt;iframe src="https://giphy.com/embed/l0NhZ0aUSE8fXag12" width="900" height="450" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;
 
-[ulyngs.github.io/rmarkdown-workshop-2019](https://ulyngs.github.io/rmarkdown-workshop-2019/)
+[ulyngs.github.io/oxberlin-2021-rmd-workshop/](https://ulyngs.github.io/oxberlin-2021-rmd-workshop/)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
