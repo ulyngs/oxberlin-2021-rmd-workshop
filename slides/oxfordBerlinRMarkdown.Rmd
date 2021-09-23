@@ -583,16 +583,25 @@ class: syntax-slide
 ]
 
 ---
-class: practice-slide
+class: center, middle, inverse
 
-.center[
 # Time for practice!
-]
+
+<br>
+# Download this GitHub repo as a zip, then open the R Project file
+## https://github.com/ulyngs/oxberlin-2021-rmd-workshop
+
+<br>
+# Ain't got R and RStudio? Go to https://rstudio.cloud/project/2898096 and set up an RStudio Cloud account
+
+
+---
+class: practice-slide
 
 Everybody should already have on their laptops...
 - [R](https://cran.rstudio.com) and [RStudio](https://www.rstudio.com/products/rstudio/download/preview/) + R packages `bookdown` and `tidyverse` (`install.packages("package-name")`)
 - a LaTeX installation, for knitting to PDF (`tinytex::install_tinytex()`)
-- Trouble? Go to https://rstudio.cloud/project/2898096 and set up an RStudio Cloud account
+
 
 .row[
 
